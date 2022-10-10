@@ -1,6 +1,6 @@
 # Data-Science-Sample
 
-Sample Data Science Project based off Kedro Framework
+Sample Data Science Project
 
 # Pre-requisites
 
@@ -17,9 +17,9 @@ sample_project
 ├───requirements.txt # package requirements
 ├───lint.sh # script to run to lint source codes
 ├───pip.sh # script to run to install the packages in requirements.txt
-├───test.sh # script to run to run test units
+├───test.sh # script to run to run test units of each script in tests
 ├───docs # sphinx auto-documentation from docstrings
-├───data # local directory for any data
+├───data # local directory for any temp data (do not push to github, set in .gitignore)
 ├───logs # logs files
 ├───notebooks # all the jupyter notebooks
 ├───src # all the relevant files
@@ -40,11 +40,32 @@ sample_project
     ├───pipelines
     └───utils
 └───conf # yaml files
-    └───base
+    └───base # configurations that are reused across team members
         ├───catalog.yaml # data catalog
         ├───parameters.yaml # parameters config
-    ├───local
+    └───local # configurations that are specific to the user such as credentials
         └───credentials.yaml (do not push to github, set in .gitignore)
-└───main.py # main scriptfor deployment
+└───main.py # main script for deployment
 ```
 
+# 2. PEP Coding Conventions
+
+Watch: https://www.youtube.com/watch?v=D4_s3q038I0
+
+# 3. Docstring Conventions
+
+Google style docstring: https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
+
+Advanced typing: https://docs.python.org/3/library/typing.html
+
+# 4. Configurations
+
+# 5. Linting Pre-hook
+
+TODO
+
+# 6. TODO
+
+- Unit testing
+- Sphinx Documentation
+- Error Handling
