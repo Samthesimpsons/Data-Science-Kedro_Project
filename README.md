@@ -61,19 +61,7 @@ Documentation: https://peps.python.org/pep-0008/
 - Functions: hello_world()
 - Class/Exception: HelloWorld (PascalCase)
 
-  **Naming conventions:**
-
-```python
-class Test:
-   def test(self):
-       pass
-
-   @classmethod
-   def cls_method(cls):
-       pass
-```
-
-**Spacing conventions:**
+**Spacing & Naming conventions:**
 
 ```python
 class Test:
@@ -84,7 +72,8 @@ class Foo: # 2 blank lines
     def __init__(self):
         pass
 
-    def foo(self): # 1 blank line
+    @classmethod # 1 blank line
+    def cls_method(cls):
         pass
 
 
@@ -172,7 +161,6 @@ If nothing is returned, means the config needs to be updated. Inside the `.git/c
 
 ```sh
 [core]
-    ...
 	hooksPath = ~/OneDrive/Desktop/DS_Project/.git/
 ```
 
