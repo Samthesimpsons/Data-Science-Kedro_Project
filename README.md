@@ -1,10 +1,11 @@
 # Data-Science-Sample
 
-Sample Data Science Project
+Sample Data Science Project. I learnt the following practises during my first job as a data scientist in DBS. Note the content are mainly derived from Lecia Lim who works at DBS, full credit to her.
 
 # Pre-requisites
 
-- Understand git commands (Setting up from a fresh repository, or pushing local files to existing repository, branching, reverting file changes, ..)
+- Understand git (Setting up from a fresh repository, or pushing local files to existing repository, branching, reverting file changes, gitignore, ..)
+- Classes and OOP
 - Bash scripting
 
 # 1. Folder Structure
@@ -51,6 +52,8 @@ sample_project
 # 2. PEP Coding Conventions
 
 Watch: https://www.youtube.com/watch?v=D4_s3q038I0
+
+Documentation: https://peps.python.org/pep-0008/
 
 - Variables: hello_world (do not use camelCase)
 - Constants: HELLO_WORLD (use caps, below import statements)
@@ -111,7 +114,7 @@ if foo[:3] == "bar":
     pass
 ```
 
-Nevertheless we can use auto formatter like `black`.
+Nevertheless we can use auto formatter like `black` which reformats the files in-place with their own PEP8 compliant coding style.
 
 # 3. Docstring Conventions
 
@@ -159,7 +162,42 @@ def add(x: int, y: int, op: Union[None, str]) -> int:
 
 # 4. Linting Pre-hook
 
-TODO
+Make sure current working directory is where git is initialized. Then check if the `hooksPath` is set up by running:
+
+```bash
+$ git config hooksPath
+```
+
+If nothing is returned, means the config needs to be updated. Inside the `.git/config` hidden file, set another line under `[core]`:
+
+```sh
+[core]
+    ...
+	hooksPath = ~/OneDrive/Desktop/DS_Project/.git/
+```
+
+Re-run the previous command to check if the path exists.
+
+Now to do our own pre-commit hooks, create the following script `~/OneDrive/Desktop/DS_Project/.git/hooks/pre-commit.sh` with the following content:
+
+```bash
+# Pre-commit hooks to lit code before each commit takes place.
+echo "Running lint.sh before commit"
+bash ~/OneDrive/Desktop/DS_Project/lint.sh
+echo "Running lint.sh completed!"
+```
+
+Then in `lint.sh` file specify the following content:
+
+```bash
+# Linting script
+echo "--------- Formatter with black ---------"
+black ~/OneDrive/Desktop/DS_Project/src/ --line-length=88 --preview
+echo "--------- Linting with flake8 ---------"
+flake8 ~/OneDrive/Desktop/DS_Project/src/ --max-line-length=88
+echo "--------- Type checking with mypy ---------"
+mypy ~/OneDrive/Desktop/DS_Project/src/
+```
 
 # 6. TODO
 
