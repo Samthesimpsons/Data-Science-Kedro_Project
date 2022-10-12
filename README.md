@@ -2,10 +2,13 @@
 
 Sample Data Science Project. I learnt the following practises during my first job as a data scientist in DBS. Note the content are mainly derived from Lecia Lim who works at DBS, full credit to her.
 
+The tutorial on OOP is a refresher compiled from Corey Schafer YouTube playlist on OOP.
+
 # Pre-requisites
 
 - Understand git (Setting up from a fresh repository, or pushing local files to existing repository, branching, reverting file changes, gitignore, ..)
-- Classes and OOP
+- Classes and OOP (there is a tutorial under `notebooks/OOP.ipynb`)
+- Error Handling (there is a tutorial under `notebooks/errorHandling.ipynb`)
 - Bash scripting
 
 # 1. Folder Structure
@@ -192,5 +195,5 @@ mypy ~/OneDrive/Desktop/DS_Project/src/
 - YAML configurations
 - IO class?
 - Unit testing
-- Sphinx Documentation
+- Sphinx Documentation (Sat?)
 - Error Handling
