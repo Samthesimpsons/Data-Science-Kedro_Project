@@ -157,14 +157,14 @@ def add(x: int, y: int, op: Union[None, str]) -> int:
 Make sure current working directory is where git is initialized. Then check if the `hooksPath` is set up by running:
 
 ```bash
-$ git config hooksPath
+$ git config core.hooksPath
 ```
 
 If nothing is returned, means the config needs to be updated. Inside the `.git/config` hidden file, set another line under `[core]`:
 
 ```sh
 [core]
-	hooksPath = ~/OneDrive/Desktop/DS_Project/.git/
+	hooksPath = ~/OneDrive/Desktop/DS_Project/.git/hooks
 ```
 
 Re-run the previous command to check if the path exists.
