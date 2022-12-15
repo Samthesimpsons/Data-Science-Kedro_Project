@@ -192,17 +192,62 @@ mypy ~/OneDrive/Desktop/DS_Project/src/
 
 # 5. Sphinx Documentation
 
+https://www.youtube.com/watch?v=qRSb299awB0
+
 ```bash
-sphinx-quickstart docs
-# Answer the questions
+sphinx-quickstart docs # Answer the questions
 
 cd docs/
 
-make 
+make html
+
+cd build/html
+
+python -m http.server
 ```
+
+Convert the restructured text to markdown
+
+```bash
+pip install rst-to-myst[sphinx]
+
+# Back in root directory
+rst2myst convert docs/**/*.rst
+
+# Then delete the rst file, since the md version exists
+```
+
+Under the `conf.py` in source, add `myst_parser`. Now we need sphinx to use myst_parser to parse our `index.md` markdown file in source. First we need install `myst-parser`.
+
+```bash
+pip install myst-parser
+```
+
+```
+# -- General configuration ---------------------------------------------------
+
+# Add any Sphinx extension module names here, as strings. They can be
+# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
+# ones.
+extensions = [
+    "myst_parser",
+]
+```
+
+Then now running `make html` should work again. However, it is tedious to keep redoing these steps if we were to edit the `index.md` in our source folder. So we use automate it using `sphinx-autobuild`.
+
+```bash
+pip install sphinx-autobuild
+
+# Back in root directory
+sphinx-autobuild docs/source/ docs/build/html
+```
+
+```bash
 
 # 6. TODO
 
 - YAML configurations
 - IO class?
 - Unit testing
+```

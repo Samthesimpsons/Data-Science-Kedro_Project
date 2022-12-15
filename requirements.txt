@@ -6,5 +6,8 @@ coverage
 
 # Documentation
 sphinx
+sphinx-autobuild
+rst-to-myst[sphinx]
+myst_parser
 sphinx_rtd_theme
 sphinxcontrib-napoleon
