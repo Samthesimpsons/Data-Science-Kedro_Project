@@ -190,10 +190,19 @@ echo "--------- Type checking with mypy ---------"
 mypy ~/OneDrive/Desktop/DS_Project/src/
 ```
 
+# 5. Sphinx Documentation
+
+```bash
+sphinx-quickstart docs
+# Answer the questions
+
+cd docs/
+
+make 
+```
+
 # 6. TODO
 
 - YAML configurations
 - IO class?
 - Unit testing
-- Sphinx Documentation (Sat?)
-- Error Handling
