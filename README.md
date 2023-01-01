@@ -192,10 +192,12 @@ mypy ~/OneDrive/Desktop/DS_Project/src/
 
 # 5. Sphinx Documentation
 
-https://www.youtube.com/watch?v=qRSb299awB0
+- https://www.youtube.com/watch?v=qRSb299awB0
+- https://towardsdatascience.com/documenting-python-code-with-sphinx-554e1d6c4f6d
 
 ```bash
-sphinx-quickstart docs # Answer the questions
+# Quickstart interactive tool to ask questions about the project & create a `make.bat` file used for doc generation
+sphinx-quickstart docs
 
 cd docs/
 
